@@ -1,68 +1,167 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Ice Cream Builder - React JS Starter Application
 
-## Available Scripts
+A basic template that consists of the essential elements that are required to start building a React application using [create-react-app](https://github.com/facebook/create-react-app).
 
-In the project directory, you can run:
+## Table of contents
 
-### `yarn start`
+- [Installation](#installation)
+  - [Node JS](#node-js)
+  - [Create React App](#create-react-app)
+- [Editor setup](#editor-setup)
+  - [Plugins](#plugins)
+  - [Settings](#settings)
+- [Linting & Auto Formatting setup](#linting-and-auto-formatting-setup)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### node js
 
-### `yarn test`
+You’ll need to have Node 8.16.0 or Node 10.16.0 or later version on your local development machine. You can check your node version by simply typing below commands:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+node -v
+```
 
-### `yarn build`
+If you don't have node.js installed in your machine, you can install it from [node.js official website](https://nodejs.org/en).
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In case you have older version node.js installed in your machine, you can follow [this guideline](https://phoenixnap.com/kb/update-node-js-version) to update node.js.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Create React App
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Open terminal and 'cd' into the folder where you want your project to reside & enter the below command in your terminal:
 
-### `yarn eject`
+```bash
+npx create-react-app ice-cream-builder
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This will create a new folder called "ice-cream-builder" and install everything required to start a new react application.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Editor Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+You can use any editor but as I personally prefer VS Code. I will give some instructions about how I prefer VS code to be setup for React applications.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Plugins
 
-## Learn More
+I would recommend below plugins for VS Code:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- ESLint by Dirk Baeumer
+- Prettier - Code formatter by Prettier
+- Live Server by Ritwick Dey
+- Path Autocomplete by Mithai Vilcu
+- Bracket Pair Colorizer by CoenraadS
+- Material Icon Theme by Phillipp Kief
+- ES7 React/Redux/GraphQL/React-Native snippets - dsznajder
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Settings
 
-### Code Splitting
+I would also recommend below settings for VS Code. You can edit the VS Code settings.json file by simply pressing (CTRL + ,) in Windows or (CMD + ,) in MacOS
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```json
+{
+  "editor.wordWrap": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
+  "eslint.alwaysShowStatus": true,
+  "javascript.validate.enable": false,
+  "prettier.disableLanguages": ["javascript", "javascriptreact"],
+  "bracketPairColorizer.colorMode": "Independent",
+  "bracketPairColorizer.independentPairColors": [
+    ["()", ["White"], "Red"],
+    ["[]", ["Orchid"], "Red"],
+    ["{}", ["LightSkyBlue"], "Red"]
+  ],
+  "workbench.iconTheme": "material-icon-theme",
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "path-autocomplete.extensionOnImport": true,
+  "path-autocomplete.excludedItems": {
+    "**/*.js": {
+      "when": "**"
+    },
+    "**/*.jsx": {
+      "when": "**"
+    }
+  }
+}
+```
 
-### Analyzing the Bundle Size
+## Linting and auto Formatting Setup
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- Open terminal and cd into the project directory
+- enter below command
 
-### Making a Progressive Web App
+```bash
+npx install-peerdeps --dev eslint-config-airbnb@18.1.0
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- when the above one finishes, enter the below command
 
-### Advanced Configuration
+```bash
+npm install prettier eslint-config-prettier eslint-plugin-prettier
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- create 2 new files inside the project root folder called '.eslintrc' and '.eslintignore'
+- write below lines inside .eslintignore file
 
-### Deployment
+```txt
+src/serviceWorker.js
+src/setupTests.js
+public/*
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- write below lines inside .eslintrc file
 
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```txt
+{
+    "extends": [
+        "react-app",
+        "airbnb",
+        "airbnb/hooks",
+        "eslint:recommended",
+        "plugin:jsx-a11y/recommended",
+        "prettier",
+        "prettier/react"
+    ],
+    "plugins": [
+        "jsx-a11y",
+        "prettier"
+    ],
+    "rules": {
+        "no-console": "off",
+        "react/state-in-constructor": "off",
+        "react/prop-types": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "prettier/prettier": [
+            "error",
+            {
+                "trailingComma": "es5",
+                "singleQuote": true,
+                "printWidth": 100,
+                "tabWidth": 4,
+                "semi": true
+            }
+        ]
+    }
+}
+```
