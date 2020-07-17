@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="images/logo.svg" />
+    <title>Ice Cream Sundae</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="react" id="layout">
+      <!-- header start -->
+      <header>
+        <div class="container react" id="header">
+          <div>
+            <img class="logo" src="images/logo.svg" alt="Logo" />
+          </div>
+          <div class="textRight">
+            <img src="images/react.svg" alt="React" class="reactLogo" /><strong
+              >React</strong
+            >
+          </div>
+        </div>
+      </header>
+      <!-- header end -->
+
+      <!-- body start -->
+      <div class="mainBody react" id="body">
+        <div class="container react" id="iceCreamBuilder">
+          <!-- icecream start -->
+          <div>
+            <div class="icecream react" id="icecream">
+              <p class="cone"></p>
+              <!-- <p>Please start adding scoops</p> -->
+              <div class="scoop chocolate"></div>
+              <div class="scoop vanilla"></div>
+              <div class="scoop orange"></div>
+              <div class="scoop strawberry"></div>
+              <div class="scoop chocolate"></div>
+              <div class="scoop vanilla react" id="scoop"></div>
+              <div class="scoop lemon"></div>
+              <div class="cherry"></div>
+            </div>
+          </div>
+          <!-- ice cream end -->
+
+          <!-- builder start -->
+          <div class="react" id="builder">
+            <div class="builder">
+              <h3>Build your own Ice Cream Sundae</h3>
+              <!-- items start -->
+              <div class="react" id="items">
+                <ul>
+                  <!-- item start -->
+                  <li class="react item" id="item">
+                    <span>Vanilla</span>
+                    <span class="quantity">2</span>
+                    <div class="right">
+                      <button type="button" class="plus rounded">+</button>
+                      <button type="button" class="minus rounded">-</button>
+                    </div>
+                  </li>
+                  <!-- item end -->
+
+                  <li class="item">
+                    <span>Chocolate</span>
+                    <div class="right">
+                      <button type="button" class="plus rounded">+</button>
+                      <button type="button" class="minus rounded">-</button>
+                    </div>
+                  </li>
+
+                  <li class="item">
+                    <span>Strawberry</span>
+                    <div class="right">
+                      <button type="button" class="plus rounded">+</button>
+                      <button type="button" class="minus rounded">-</button>
+                    </div>
+                  </li>
+
+                  <li class="item">
+                    <span>Orange</span>
+                    <div class="right">
+                      <button type="button" class="plus rounded">+</button>
+                      <button type="button" class="minus rounded">-</button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- items end -->
+
+              <!-- total price start -->
+              <div class="total react" id="total">
+                <div>Total Price</div>
+                <div>3000.00 Tk</div>
+              </div>
+              <!-- total price end -->
+              <button type="button" onclick="next()" class="order rounded">
+                Add to Cart
+              </button>
+            </div>
+
+            <!-- modal start -->
+            <div class="react" id="modal">
+              <div class="backdrop" onclick="removeModal()"></div>
+              <div class="modalBody">
+                <div class="formContainer react" id="orderForm">
+                  <h1>Complete the form below and hit submit</h1>
+                  <form class="orderForm">
+                    <ul>
+                      <li>
+                        <input
+                          type="text"
+                          name="name"
+                          class="fieldStyle fieldSplit alignLeft"
+                          placeholder="Name"
+                        />
+                        <input
+                          type="text"
+                          name="phone"
+                          class="fieldStyle fieldSplit alignRight"
+                          placeholder="Phone no."
+                        />
+                      </li>
+                      <li>
+                        <input
+                          type="text"
+                          name="email"
+                          class="fieldStyle fieldFull"
+                          placeholder="Email"
+                        />
+                      </li>
+                      <li>
+                        <textarea
+                          name="address"
+                          class="fieldStyle"
+                          placeholder="Address"
+                        ></textarea>
+                      </li>
+                      <li>
+                        <input type="submit" value="Submit Order" />
+                      </li>
+                    </ul>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!-- modal end -->
+          </div>
+          <!-- builder end -->
+        </div>
+      </div>
+      <!-- body end -->
+
+      <!-- footer start -->
+      <footer>
+        <div class="container react" id="footer">
+          <div>
+            Copyright &copy;2020.
+          </div>
+          <div class="textRight">
+            Built with <span class="red">&hearts;</span> by
+            <a
+              href="https://reactjs.org/docs/create-a-new-react-app.html"
+              target="_blank"
+              >Create React App</a
+            >
+          </div>
+        </div>
+      </footer>
+      <!-- footer end -->
+    </div>
+
+    <script>
+      // modal control
+      var next = () => {
+        document.querySelector(".backdrop").style.display = "block";
+        document.querySelector(".modalBody").style.display = "block";
+      };
+      var removeModal = () => {
+        document.querySelector(".backdrop").style.display = "none";
+        document.querySelector(".modalBody").style.display = "none";
+      };
+      // turn on debug mode
+      var debugMode = false;
+      var debugActivate = function (a) {
+        [].forEach.call(document.querySelectorAll(a), function (b) {
+          var color = (~~(Math.random() * (1 << 24))).toString(16);
+          b.style.outline = "2px solid #" + color;
+          b.style.setProperty("--contenti", `"${b.id}"`);
+          b.style.setProperty("--color", `#${color}`);
+          if (b.id !== "scoop") b.style.background = "rgba(0, 0, 0, 0.3)";
+        });
+        debugMode = true;
+      };
+
+      var debugDeActivate = function (a) {
+        [].forEach.call(document.querySelectorAll(a), function (b) {
+          b.style.outline = "none";
+          b.style.removeProperty("--contenti");
+          b.style.removeProperty("--color");
+          if (b.id !== "scoop") b.style.background = "";
+        });
+        debugMode = false;
+      };
+
+      document.addEventListener("keyup", (e) => {
+        if (e.code === "KeyD") {
+          debugMode ? debugDeActivate(".react") : debugActivate(".react");
+        }
+      });
+    </script>
+  </body>
+</html>
