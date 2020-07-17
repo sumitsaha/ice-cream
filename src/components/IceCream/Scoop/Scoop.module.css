@@ -1,0 +1,48 @@
+.scoop {
+  width: 100px;
+  height: 80px;
+  border-radius: 100%;
+  position: relative;
+  margin-bottom: -45px;
+  z-index: 3;
+}
+
+.scoop::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: -10px;
+  height: 35px;
+  width: 120px;
+  border-radius: 100%;
+  z-index: 2;
+}
+
+div.scoop:first-of-type {
+  margin-bottom: 0px;
+}
+
+.chocolate,
+.chocolate::after {
+  background: #b98160;
+}
+
+.vanilla,
+.vanilla::after {
+  background: #fae8b6;
+}
+
+.strawberry,
+.strawberry::after {
+  background: pink;
+}
+
+.orange,
+.orange::after {
+  background: orange;
+}
+
+.lemon,
+.lemon::after {
+  background: #5fd592;
+}

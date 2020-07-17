@@ -1,0 +1,33 @@
+.icecream {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  min-height: 632px;
+}
+
+@media only screen and (max-width: 767.99px) {
+  .icecream {
+    min-height: 0px !important;
+  }
+}
+
+.cone {
+  margin-top: -20px;
+  height: 0px;
+  width: 0px;
+  border-right: 45px solid transparent;
+  border-left: 45px solid transparent;
+  border-top: 140px solid tan;
+  z-index: 1;
+}
+
+.cherry {
+  background: url(../../assets/images/cherry.png) center/cover no-repeat;
+  width: 50px;
+  height: 77px;
+  z-index: 3;
+  margin-bottom: -10px;
+}

@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  font-size: 14px;
+  padding: 5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  background: #f3f3f3; /*#53c1de*/
+  color: #1d2129;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p {
+  margin-bottom: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul {
+  list-style-type: none;
+  width: 100%;
+  margin: 25px auto 10px;
+  padding: 0;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #385898;
+  text-decoration: none;
+}
+
+button {
+  outline: none;
+  cursor: pointer !important;
+}
+
+input[type="submit"]:disabled,
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed !important;
+}
+
+.right {
+  float: right;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.rounded {
+  border-radius: 3px;
+}
+
+span {
+  line-height: normal;
+  vertical-align: middle;
+  padding: 0;
+}
+
+.red {
+  color: red;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  border-bottom: 1px solid #5250507e;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0 auto;
+  max-width: 1024px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container > div {
+  width: 100%;
 }

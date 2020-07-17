@@ -1,0 +1,18 @@
+.builder {
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #dddfe2;
+  border-radius: 3px;
+}
+
+.order {
+  background-color: #28a745;
+  color: #fff;
+  border-color: #28a745;
+  border: 1px solid transparent;
+  display: block;
+  margin: 30px auto 0;
+  width: 100%;
+  padding: 10px 0;
+  font-weight: bold;
+}
