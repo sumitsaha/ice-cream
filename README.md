@@ -10,6 +10,7 @@ A basic template that consists of the essential elements that are required to st
 - [Editor setup](#editor-setup)
   - [Plugins](#plugins)
   - [Settings](#settings)
+  - [Set Line Breaks](#set-line-breaks)
 - [Linting & Auto Formatting setup](#linting-and-auto-formatting-setup)
 
 ## Installation
@@ -96,6 +97,12 @@ I would also recommend below settings for VS Code. You can edit the VS Code sett
   }
 }
 ```
+
+### Set Line Breaks
+
+Make sure in your VS Code Editor, "LF" is selected as line feed instead of CRLF (Carriage return and line feed). To do that, just click LF/CRLF in bottom right corner of editor, click it and change it to "LF". If you dont do that, you will get errors in my setup.
+
+<img src="public/line-feed.jpg" alt="Line Feed" width="700">
 
 ## Linting and auto Formatting Setup
 
